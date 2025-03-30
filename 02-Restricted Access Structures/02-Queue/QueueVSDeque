@@ -1,0 +1,45 @@
+Queue vs. Deque: Understanding the Difference
+
+In computer science, both queues and deques are data structures used to manage collections of elements, but they differ significantly in their rules and flexibility.
+
+What is a Queue?
+A queue is like a line of people waiting at a ticket counter. It follows a strict First-In-First-Out (FIFO) rule:
+
+Operations:
+You can only add elements to the back (called enqueue).
+You can only remove elements from the front (called dequeue).
+Order: The first element added is the first one removed, just like the first person in line gets served first.
+Example:
+Enqueue 10: [10]
+Enqueue 20: [10, 20]
+Enqueue 5: [10, 20, 5]
+Dequeue: [20, 5] (10 is removed first because it was added first)
+Use Case: Queues are perfect for scenarios where order matters, like processing tasks in the sequence they arrive (e.g., a printer queue).
+What is a Deque?
+A deque (short for double-ended queue) is more like a flexible line where people can join or leave from either end. It doesn’t stick to a single rule like FIFO:
+
+Operations:
+You can add elements to the front (push_front) or the back (push_back).
+You can remove elements from the front (pop_front) or the back (pop_back).
+Order: The order depends on where you add or remove elements, not just when they were added. This makes it more versatile.
+Example:
+Push_front 10: [10]
+Push_back 20: [10, 20]
+Push_front 5: [5, 10, 20] (5 goes to front, not back)
+Push_back 30: [5, 10, 20, 30]
+Pop_front: [10, 20, 30] (5 removed from front)
+Pop_back: [10, 20] (30 removed from back)
+Use Case: Deques are great when you need control over both ends, like a playlist where you can add or remove songs from the start or end.
+Key Differences:
+Flexibility:
+Queue: Rigid—only back-in, front-out (FIFO).
+Deque: Flexible—add or remove from either end.
+Control:
+Queue: You can’t change the order after adding (first in stays first).
+Deque: You can rearrange by choosing front or back for insertions/removals.
+Behavior:
+Queue: If you add 10 then 5, it’s always [10, 5], and 10 leaves first.
+Deque: If you push_front 10 then push_front 5, it’s [5, 10], because 5 was added to the front.
+Summary:
+A queue is simple and strict, ideal for orderly, one-way processing.
+A deque is versatile, letting you manipulate both ends, making it suitable for more complex tasks where you need extra control.

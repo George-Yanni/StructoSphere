@@ -1,0 +1,55 @@
+Queue Data Structure
+
+📌 Introduction
+A Queue is a linear data structure that follows the FIFO (First In, First Out) principle. This means that the element inserted first is removed first, similar to a real-life queue (e.g., a line of people waiting at a ticket counter).
+
+🔹 Characteristics of a Queue
+FIFO Order: The first element added is the first one removed.
+
+Two Ends:
+
+Front: The position from where elements are removed.
+
+Rear: The position where elements are added.
+
+Dynamic Size: Depending on the implementation (array-based or linked list), the size can be fixed or dynamic.
+
+⚙️ Queue Operations
+Enqueue (Insertion): Adds an element at the rear.
+
+Dequeue (Deletion): Removes an element from the front.
+
+Front (Peek): Returns the front element without removing it.
+
+isEmpty: Checks if the queue is empty.
+
+isFull (For fixed-size queues): Checks if the queue is full.
+
+Size: Returns the number of elements in the queue.
+
+🛠 Types of Queues
+Simple Queue: A standard FIFO queue.
+
+Circular Queue: The rear wraps around to the front when the queue is full.
+
+Deque (Double-Ended Queue): Allows insertion and deletion from both ends.
+
+Priority Queue: Elements are dequeued based on priority instead of FIFO order.
+
+🚀 Real-World Applications
+CPU Scheduling: Manages execution of processes.
+
+Printer Queue: Controls print job order.
+
+Call Center Management: Handles customer service requests.
+
+Network Packet Management: Queues network data packets for transmission.
+
+Job Scheduling: Manages tasks in operating systems.
+
+✅ Advantages of Queues
+Efficient Task Scheduling: Ensures proper order of processing.
+
+Fair Resource Allocation: Used in CPU scheduling and load balancing.
+
+Data Buffering: Helps in streaming and real-time data management.
