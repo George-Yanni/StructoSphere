@@ -1,0 +1,52 @@
+# Stack Data Structure
+
+## Introduction
+
+A **Stack** is a linear data structure that follows the **Last In, First Out (LIFO)** principle. This means that the last element added to the stack will be the first one to be removed. It is analogous to a stack of plates where you add new plates on top and remove the top plate first.
+
+## Key Characteristics
+
+- **LIFO (Last In, First Out)** – The last element added is the first to be removed.
+- **Dynamic Size** – The stack grows and shrinks dynamically as elements are pushed and popped.
+- **Restricted Access** – Elements can only be accessed from the top.
+
+## Basic Operations
+
+1. **Push(x)** – Adds an element `x` to the top of the stack.
+2. **Pop()** – Removes and returns the top element of the stack.
+3. **Peek/Top()** – Returns the top element without removing it.
+4. **isEmpty()** – Checks if the stack is empty.
+5. **Size()** – Returns the number of elements in the stack.
+
+## Applications of Stack
+
+- **Function Call Management** – Used in recursion and function execution (call stack).
+- **Expression Evaluation** – Used in postfix, prefix, and infix expressions.
+- **Backtracking** – Used in algorithms like maze solving and DFS traversal.
+- **Undo/Redo Operations** – Used in text editors and applications.
+- **Memory Management** – Stack memory allocation for local variables.
+
+## Implementation
+
+A stack can be implemented using:
+
+- **Arrays** (Fixed size, efficient operations)
+- **Linked Lists** (Dynamic size, extra memory for pointers)
+- **Collections** (Using built-in stack libraries in programming languages like Python, Java, and C++)
+
+
+
+## Complexity Analysis
+
+| Operation | Time Complexity |
+| --------- | --------------- |
+| Push(x)   | O(1)            |
+| Pop()     | O(1)            |
+| Peek()    | O(1)            |
+| isEmpty() | O(1)            |
+| Size()    | O(1)            |
+
+## Conclusion
+
+Stacks are fundamental data structures widely used in computing. Their simplicity and efficiency make them a powerful tool in various applications, from memory management to algorithm design. Understanding stacks is crucial for mastering data structures and algorithms.
+
