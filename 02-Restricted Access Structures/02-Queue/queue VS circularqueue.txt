@@ -1,0 +1,99 @@
+1. Regular (Linear) Queue
+A linear queue is a FIFO (First-In-First-Out) data structure where elements are added at the rear and removed from the front.
+
+Key Characteristics:
+Operations:
+
+Enqueue (Insert): Adds an element at the rear.
+
+Dequeue (Remove): Removes an element from the front.
+
+Peek/Front: Returns the front element without removing it.
+
+isEmpty/IsFull: Checks if the queue is empty or full.
+
+Memory Usage:
+
+Uses a linear storage structure (array or linked list).
+
+Once elements are dequeued, the space is not reused.
+
+Performance:
+
+O(1) time complexity for enqueue/dequeue (if implemented efficiently).
+
+Fixed size (if using an array) leads to memory wastage when elements are dequeued.
+
+Disadvantages:
+Memory wastage: Dequeued space is not reused.
+
+Inefficient for large queues: Requires shifting elements or dynamic resizing.
+
+2. Circular Queue
+A circular queue (also called a ring buffer) is an optimized version of a linear queue where the rear and front wrap around to the start when they reach the end.
+
+Key Characteristics:
+Operations:
+
+Enqueue: Adds an element at the rear, wrapping around if needed.
+
+Dequeue: Removes an element from the front, wrapping around if needed.
+
+Peek/Front: Returns the front element without removing it.
+
+isEmpty/IsFull: Checks if the queue is empty or full.
+
+Memory Usage:
+
+Uses a fixed-size array but reuses empty spaces after dequeues.
+
+No memory wastage (efficient for fixed-size buffers).
+
+Performance:
+
+O(1) time complexity for enqueue/dequeue.
+
+Better memory utilization than a linear queue.
+
+Advantages:
+✔ No memory wastage (reuses dequeued space).
+✔ Efficient for fixed-size buffers (e.g., CPU scheduling, traffic systems).
+✔ Better performance than a linear queue when space is limited.
+
+---------------------------------------------------------------------------------------------------
+Feature             | Linear Queue                          | Circular Queue
+--------------------|---------------------------------------|--------------------------------------
+Memory Usage        | Wastes space after dequeues           | Reuses space efficiently
+--------------------|---------------------------------------|--------------------------------------
+Implementation      | Simple but inefficient                | Slightly complex but optimized
+--------------------|---------------------------------------|--------------------------------------
+Use Cases           | Simple FIFO needs                     | Fixed-size buffers, real-time systems
+--------------------|---------------------------------------|--------------------------------------
+Performance         | O(1) but may waste memory             | O(1) with better memory usage
+--------------------|---------------------------------------|--------------------------------------
+Resizing            | Needs dynamic resizing                | Fixed size (no resizing needed)
+---------------------------------------------------------------------------------------------------
+
+When to Use Which?
+Use a Linear Queue:
+
+When you need a simple FIFO structure.
+
+When memory is not a constraint.
+
+When you need dynamic resizing (e.g., using a linked list).
+
+Use a Circular Queue:
+
+When working with fixed-size buffers (e.g., CPU scheduling, printer queues).
+
+When memory efficiency is crucial.
+
+In real-time systems where space reuse is needed (e.g., traffic light control).
+
+Final Thoughts
+Circular queues are more efficient for fixed-size applications.
+
+Linear queues are simpler but waste memory.
+
+Choose based on your memory and performance needs.
