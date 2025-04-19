@@ -70,3 +70,47 @@ A **bit field** is a data structure used in programming to store multiple boolea
 ## Summary
 - Use **bit fields** when you need a compact, readable way to store a small, fixed number of flags or values, especially in memory-constrained environments.
 - Use **bit arrays** when you need a flexible, scalable way to handle large or dynamic sets of bits, despite the potential for higher memory usage and more complex access patterns.
+
+<br><br>
+
+# Introduction to Bitboards
+
+## What is a Bitboard?
+
+A bitboard is a data structure commonly used in computer chess and other board games to represent game states efficiently. It leverages the power of bitwise operations to manipulate and query the state of a board, typically using a 64-bit integer to represent an 8x8 game board, such as a chessboard. Each bit in the 64-bit integer corresponds to a specific square on the board, where a `1` indicates the presence of a piece (or a specific condition) and a `0` indicates its absence.
+
+Bitboards are particularly popular in chess programming because they allow for fast, compact, and elegant solutions to common tasks like move generation, attack detection, and board state evaluation. By using bitwise operations (AND, OR, XOR, NOT, shifts, etc.), operations that would otherwise require looping through an array or matrix can be performed in a single CPU instruction, significantly improving performance.
+
+## Why Use Bitboards?
+
+Bitboards offer several advantages, especially in performance-critical applications like game engines:
+
+- **Efficiency**: Bitwise operations are extremely fast, as they are executed at the hardware level in a single clock cycle.
+- **Compact Representation**: A single 64-bit integer can represent an entire board state, reducing memory usage compared to arrays or other data structures.
+- **Parallel Processing**: Bitboards enable simultaneous manipulation of multiple squares, making tasks like calculating all possible moves for a piece or detecting attacks highly efficient.
+- **Scalability**: Bitboards can be extended to represent various aspects of the game, such as different piece types, colors, or even game states like check or castling availability.
+
+## How Bitboards Work
+
+In a typical chess bitboard setup, each square on an 8x8 board is mapped to a bit in a 64-bit integer. The squares are usually indexed from A1 (bottom-left) to H8 (top-right), with A1 corresponding to bit 0 and H8 to bit 63. For example:
+
+- A bitboard for white pawns would have a `1` in the bits corresponding to the squares where white pawns are located (e.g., bits 8 to 15 for the initial position of white pawns on the second rank).
+- A bitboard for all knights (both white and black) would have `1`s in the bits corresponding to the squares occupied by knights.
+
+Multiple bitboards are often used together to represent different aspects of the game. For instance, a chess engine might maintain separate bitboards for:
+- Each piece type (pawns, knights, bishops, rooks, queens, kings).
+- Each player (white and black).
+- Special conditions (e.g., squares under attack, legal moves, or pinned pieces).
+
+By combining these bitboards using bitwise operations, complex queries can be answered efficiently. For example, to find all squares attacked by white pieces, you could OR together the bitboards representing attacks from all white pieces.
+
+## Common Applications of Bitboards
+
+Bitboards are versatile and can be used for a variety of tasks in game programming, including:
+
+- **Move Generation**: Calculating all legal moves for a piece by shifting or manipulating bitboards to represent possible destinations.
+- **Attack Detection**: Determining which squares are under attack by combining attack bitboards for each piece.
+- **Board Evaluation**: Counting material or assessing positional factors by analyzing bitboard patterns.
+- **Check and Checkmate Detection**: Identifying whether a king is in check or checkmate by examining attack and move bitboards.
+- **Move Validation**: Verifying the legality of a move by checking bitboard intersections.
+
