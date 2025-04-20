@@ -4,7 +4,7 @@
 #include <thread>
 #include <chrono>
 using namespace std;
-
+//This program simulates a caching system that uses a bitmap to efficiently track which keys are cached, minimizing memory usage (1 bit per entry).
 // Simple bitmap class
 class Bitmap {
 private:
