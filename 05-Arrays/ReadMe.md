@@ -221,3 +221,38 @@ The **Bitmap**, **Bit Array**, and **Bit Field** are all data structures that de
 - **Bit Field**: Primarily used in systems programming where memory efficiency is critical, and specific bit-widths are allocated to different data fields.
 
 While these data structures are similar, their specific use cases and implementations vary, making each one suitable for different scenarios depending on the needs for efficiency, flexibility, and low-level control.
+
+<br><br>
+
+# Circular Buffer Data Structure
+
+A **circular buffer** (or ring buffer) is a fixed-size data structure that wraps around when it reaches its capacity, overwriting old data with new data. It efficiently handles streaming data or scenarios requiring a sliding window of elements.
+
+## Key Features
+- **Fixed Size**: Holds a set number of elements (e.g., 5 slots).
+- **Wraparound**: When full, new data overwrites the oldest data.
+- **Pointers**: Uses `head` (write position) and `tail` (read position) to track data.
+- **Efficient**: Constant-time operations for adding/removing data.
+
+## How It Works
+1. Initialize an array of fixed size with `head` and `tail` pointers.
+2. Add data at `head`, increment `head` (wrap to 0 if at end).
+3. Read/remove data from `tail`, increment `tail` (wrap to 0 if at end).
+4. Buffer is **full** when `head` is one slot behind `tail` (modulo size).
+5. Buffer is **empty** when `head` equals `tail`.
+
+
+## Use Cases
+- Streaming data (e.g., audio/video buffers).
+- Task scheduling in real-time systems.
+- Logging recent events with limited memory.
+
+## Advantages
+- Constant O(1) time for push/pop operations.
+- Reuses memory efficiently.
+
+## Limitations
+- Fixed size limits capacity.
+- Old data is overwritten without warning.
+
+<br><br>
