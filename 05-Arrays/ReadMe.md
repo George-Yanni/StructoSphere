@@ -329,3 +329,160 @@ Dope vectors are a powerful tool for managing arrays and other data structures i
 | Real-World Readiness   | ❌ Limited     | ✅ Ready for real applications |
 <br>
 
+
+# Dynamic Array
+
+A **Dynamic Array** is a resizable array data structure that can grow or shrink during runtime. Unlike static arrays, its size isn't fixed at compile-time.
+it called in C++ a Vector.
+
+## Key Features
+
+- Stores elements in contiguous memory
+- Automatically resizes when capacity is full
+- Allows random access using indices
+- Useful when the number of elements is unknown in advance
+
+## How It Works
+
+1. Starts with an initial capacity.
+2. When full, allocates a new array with double the capacity.
+3. Copies existing elements to the new array.
+4. Deletes the old array to free memory.
+
+
+
+## Comparison
+
+| Feature         | Static Array | Dynamic Array |
+|----------------|--------------|---------------|
+| Size Fixed?    | Yes          | No            |
+| Memory Growth  | No           | Yes           |
+| Manual Resize  | N/A          | Handled       |
+
+## When to Use
+
+- When the number of elements is **not known at compile time**
+- When you want **efficient append operations**
+- For building **flexible data containers**
+
+<br><br>
+
+# Gap Buffer Data Structure
+
+## Overview
+
+The **Gap Buffer** is a data structure used for efficiently managing text in scenarios where frequent edits (insertions and deletions) occur near the cursor. It is especially useful in **text editors** and **word processors** where real-time text editing is needed. Instead of shifting large portions of text around when editing, the Gap Buffer uses a gap (an unused space) to insert or remove characters quickly at the cursor position.
+
+## Concept
+
+The main idea behind the Gap Buffer is to maintain a contiguous array where a portion of the array is reserved as a "gap." This gap is where the text can be inserted or deleted, while the rest of the text remains in place. The gap typically starts near the cursor and expands or shrinks as text is modified.
+
+### Key Components
+
+1. **Buffer**: The main array that stores the characters.
+2. **Gap**: A section of the array that is empty and acts as the location where characters can be inserted or deleted.
+3. **Cursor**: The position at which the gap resides, indicating where edits occur.
+
+---
+
+## How It Works
+
+The Gap Buffer is initialized with a fixed size array, and the gap is placed at the beginning of the array. As text is typed or edited, the gap moves, and characters are inserted directly into the gap. Here's a breakdown of common operations:
+
+### 1. Insert Character
+- Insert a character at the position of the gap.
+- The gap shrinks as the character is inserted.
+
+### 2. Delete Character
+- Remove the character at the current cursor position (the start of the gap).
+- The gap grows as the character is deleted.
+
+### 3. Move Cursor
+- The gap can be moved to different positions within the text by shifting the content in the buffer.
+- Moving the gap may require copying sections of the text before or after the gap.
+
+---
+
+## Example
+
+### Initial State
+The buffer starts with an empty gap:
+
+```
+[ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
+```
+
+Here, the gap is empty, and the array is ready for text insertion.
+
+### Inserting "Hello"
+You start typing the word **"Hello"**:
+
+```
+[ H ] [ e ] [ l ] [ l ] [ o ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
+```
+
+Each character is inserted directly into the gap, and the gap moves forward.
+
+### Deleting a Character
+Suppose you delete the last character **"o"**. The gap grows, and the character is removed:
+
+```
+[ H ] [ e ] [ l ] [ l ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
+```
+
+The gap size increases, but the rest of the text remains intact.
+
+---
+
+## Time Complexity
+
+- **Insertion**: O(1) — Inserting a character at the gap's position is constant time.
+- **Deletion**: O(1) — Deleting a character from the gap is constant time.
+- **Cursor Movement**: O(n) — Moving the gap across the entire text may require copying sections of the text before or after the gap.
+
+---
+
+## Use Cases
+
+- **Text Editors**: Gap Buffers are commonly used in text editors where fast insertion and deletion of characters are essential. 
+- **Programming Environments**: In code editors or IDEs, Gap Buffers are useful for fast typing and modification of code.
+- **Command Line Interfaces**: Command-line text editors can benefit from Gap Buffers to manage text input efficiently.
+
+## Conclusion
+
+The Gap Buffer is a simple yet effective data structure used for efficient text editing, especially for applications that involve frequent, localized changes to the text. It works best when text edits are focused near the cursor and provides a significant improvement in performance compared to traditional array-based approaches.
+
+<br><br>
+# Hashed Array Tree (HAT)
+
+## Overview
+
+A Hashed Array Tree (HAT) is a dynamic array data structure designed to provide efficient access and insertion operations. It uses a two-level hierarchy consisting of a top-level array of pointers to fixed-size leaf arrays. This structure allows for O(1) access time and amortized O(1) insertion time, making it suitable for scenarios requiring frequent insertions and accesses.
+
+## Benefits
+
+- **Efficient Access and Insertion**: HAT provides O(1) access time and amortized O(1) insertion time, making it highly efficient for dynamic array operations.
+- **Memory Efficiency**: By using a two-level structure, HAT reduces the overhead associated with frequent reallocations and improves cache performance.
+- **Scalability**: HAT can dynamically resize to handle large datasets efficiently, ensuring that it can grow as needed without significant performance degradation.
+- **Flexible Leaf Size**: The leaf size can be adjusted to balance memory usage and performance, allowing for optimization based on specific use cases.
+- **Modular Design**: The two-level structure makes the implementation straightforward and modular, simplifying the logic for resizing and accessing elements.
+
+## Use Cases
+
+- **Large Datasets**: HAT is ideal for applications that need to handle large, dynamically growing datasets with efficient access and insertion operations.
+- **In-Memory Data Stores**: Suitable for in-memory data stores where frequent insertions and accesses are required.
+- **Real-Time Analytics**: Useful in real-time analytics applications where quick access to data is crucial.
+- **Dynamic Data Structures**: Can be used as an underlying data structure for implementing other dynamic data structures, such as dynamic hash tables or dynamic arrays with additional features.
+
+## How It Works
+
+1. **Top-Level Array**: The top-level array contains pointers to leaf arrays. This array is resized as needed to accommodate more leaf arrays.
+2. **Leaf Arrays**: Each leaf array is a fixed-size array that stores the actual data elements. Leaf arrays are resized dynamically to maintain efficient memory usage.
+3. **Insertion**: When a new element is inserted, it is placed in the appropriate leaf array. If the leaf array is full, a new leaf array is created, and the top-level array is expanded if necessary.
+4. **Access**: Elements can be accessed directly using their index, providing O(1) access time.
+
+## Conclusion
+
+The Hashed Array Tree (HAT) is a versatile data structure that combines the efficiency of arrays with the dynamic resizing capabilities of more complex data structures. It is particularly useful in scenarios where you need to handle large, dynamically growing datasets with efficient access and insertion operations. HAT's modular design and flexible leaf size make it adaptable to various use cases, ensuring optimal performance and memory usage.
+
+<br><br>
