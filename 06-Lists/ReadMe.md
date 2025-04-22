@@ -64,32 +64,7 @@ head -> [data|next] -> [data|next] -> [data|null]
 - Extra memory: Requires additional memory for `next` pointers.
 - Not cache-friendly: Nodes may not be stored contiguously in memory.
 
-## Example Implementation (Pseudocode)
-```python
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
 
-class SinglyLinkedList:
-    def __init__(self):
-        self.head = None
-    
-    def insert_at_beginning(self, data):
-        new_node = Node(data)
-        new_node.next = self.head
-        self.head = new_node
-    
-    def delete_at_beginning(self):
-        if self.head:
-            self.head = self.head.next
-    
-    def traverse(self):
-        current = self.head
-        while current:
-            print(current.data)
-            current = current.next
-```
 
 ### Applications
 - Implementing stacks and queues.
@@ -189,43 +164,7 @@ head -> [null|data|next] <-> [prev|data|next] <-> [prev|data|null] <- tail
 - More complex operations: Managing `prev` and `next` pointers increases implementation complexity.
 - Sequential access: No direct access to elements (O(n) for random access).
 
-### Example Implementation (Pseudocode)
 
-```python
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-        self.prev = None
-
-class DoublyLinkedList:
-    def __init__(self):
-        self.head = None
-        self.tail = None
-    
-    def insert_at_beginning(self, data):
-        new_node = Node(data)
-        new_node.next = self.head
-        if self.head:
-            self.head.prev = new_node
-        self.head = new_node
-        if not self.tail:
-            self.tail = new_node
-    
-    def delete_at_beginning(self):
-        if self.head:
-            self.head = self.head.next
-            if self.head:
-                self.head.prev = None
-            else:
-                self.tail = None
-    
-    def traverse_forward(self):
-        current = self.head
-        while current:
-            print(current.data)
-            current = current.next
-```
 
 ###
 - Implementing browser history (forward/back navigation).
