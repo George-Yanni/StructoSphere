@@ -50,10 +50,8 @@ A **bit array** (also known as a **bitset** or **bit vector**) is a data structu
 
 ### 4. Low-level Operations:
 - Bit-level manipulations, such as masking, shifting, and toggling, are very efficient when using a bit array.
-
-
-
-## Introduction to Bit Field
+<br><br>
+# 3-  Bit Field
 A **bit field** is a data structure used in programming to store multiple boolean or small integer values in a compact way by allocating specific bits within an integer. Each bit or group of bits represents a flag or value, allowing efficient use of memory. Bit fields are commonly used in low-level programming, such as embedded systems or hardware interfacing, where memory optimization is critical.
 ## Comparison Between Bit Field and Bit Array
 
@@ -73,15 +71,15 @@ A **bit field** is a data structure used in programming to store multiple boolea
 
 <br><br>
 
-# 3- Introduction to Bitboards
+# 4- Bitboards
 
-## What is a Bitboard?
+### What is a Bitboard?
 
 A bitboard is a data structure commonly used in computer chess and other board games to represent game states efficiently. It leverages the power of bitwise operations to manipulate and query the state of a board, typically using a 64-bit integer to represent an 8x8 game board, such as a chessboard. Each bit in the 64-bit integer corresponds to a specific square on the board, where a `1` indicates the presence of a piece (or a specific condition) and a `0` indicates its absence.
 
 Bitboards are particularly popular in chess programming because they allow for fast, compact, and elegant solutions to common tasks like move generation, attack detection, and board state evaluation. By using bitwise operations (AND, OR, XOR, NOT, shifts, etc.), operations that would otherwise require looping through an array or matrix can be performed in a single CPU instruction, significantly improving performance.
 
-## Why Use Bitboards?
+### Why Use Bitboards?
 
 Bitboards offer several advantages, especially in performance-critical applications like game engines:
 
@@ -90,7 +88,7 @@ Bitboards offer several advantages, especially in performance-critical applicati
 - **Parallel Processing**: Bitboards enable simultaneous manipulation of multiple squares, making tasks like calculating all possible moves for a piece or detecting attacks highly efficient.
 - **Scalability**: Bitboards can be extended to represent various aspects of the game, such as different piece types, colors, or even game states like check or castling availability.
 
-## How Bitboards Work
+### How Bitboards Work
 
 In a typical chess bitboard setup, each square on an 8x8 board is mapped to a bit in a 64-bit integer. The squares are usually indexed from A1 (bottom-left) to H8 (top-right), with A1 corresponding to bit 0 and H8 to bit 63. For example:
 
@@ -104,7 +102,7 @@ Multiple bitboards are often used together to represent different aspects of the
 
 By combining these bitboards using bitwise operations, complex queries can be answered efficiently. For example, to find all squares attacked by white pieces, you could OR together the bitboards representing attacks from all white pieces.
 
-## Common Applications of Bitboards
+### Common Applications of Bitboards
 
 Bitboards are versatile and can be used for a variety of tasks in game programming, including:
 
@@ -115,22 +113,22 @@ Bitboards are versatile and can be used for a variety of tasks in game programmi
 - **Move Validation**: Verifying the legality of a move by checking bitboard intersections.
 
 <br><br>
-# 4- Introduction to Bitmap Data Structure
+# 5- Bitmap Data Structure
 
 A **Bitmap** is a simple and efficient data structure that represents a collection of bits or binary values, typically used for compact storage and fast access to a large number of boolean flags or binary states. It is often used when dealing with large datasets where space and time efficiency are critical.
 
-## What is a Bitmap?
+### What is a Bitmap?
 
 A **Bitmap**, also known as a **bit array** or **bit vector**, is an array of bits (0s and 1s). Each bit in the array can represent a boolean value: 0 (false) or 1 (true). The index of the bit determines the value it holds, and the size of the bitmap defines how many elements (bits) it can hold.
 
-## Characteristics of a Bitmap
+### Characteristics of a Bitmap
 
 - **Space Efficient**: A bitmap uses a single bit for each value, which results in a very space-efficient representation, especially when compared to using entire data types like integers or boolean arrays.
 - **Fast Access**: Access to individual bits is very fast, typically O(1) time complexity, making it ideal for operations that require quick lookups.
 - **Compact Representation**: A bitmap can represent large sets of data in a compact form, especially when dealing with large numbers of boolean values.
 - **Efficient for Set Operations**: Bitmaps can be used for efficient set operations, such as union, intersection, and difference, through bitwise operations.
 
-## Applications of Bitmap Data Structure
+### Applications of Bitmap Data Structure
 
 1. **Storage of Flags**: Bitmap is often used to store the status of various flags, where each bit represents the state of an individual entity (e.g., a task or a resource).
 2. **Data Compression**: Since bitmaps are compact, they are useful in applications that involve compression of large datasets, such as database indexing and file compression.
@@ -138,7 +136,7 @@ A **Bitmap**, also known as a **bit array** or **bit vector**, is an array of bi
 4. **Indexing and Searching**: Bitmaps are used for fast indexing in databases and search engines. They help quickly locate or filter large sets of data based on certain conditions.
 5. **Memory Management**: In memory management systems, bitmaps are used to track free and occupied memory blocks.
 
-## Basic Operations on Bitmap
+### Basic Operations on Bitmap
 
 Some of the basic operations that can be efficiently performed on bitmaps include:
 
@@ -148,18 +146,18 @@ Some of the basic operations that can be efficiently performed on bitmaps includ
 - **Get Bit**: Retrieve the current value of the bit at a specific index.
 - **Bitwise Operations**: Perform AND, OR, NOT, and XOR operations on two bitmaps.
 
-## Advantages
+### Advantages
 
 - **Space Efficiency**: Using just a single bit per element makes bitmaps very space-efficient.
 - **Fast Execution**: Operations on bitmaps, including updates and queries, are typically very fast due to the low-level bitwise operations.
 - **Scalability**: Bitmaps are easily scalable and can represent very large sets of data without consuming excessive amounts of memory.
 
-## Disadvantages
+### Disadvantages
 
 - **Fixed Size**: Once a bitmap is created, its size cannot be easily changed, which can be a limitation when the number of elements is dynamic.
 - **Sparse Data**: Bitmaps may not be ideal when the data is sparse or contains a lot of zeros, as it still requires memory for each bit.
 
-## Conclusion
+### Conclusion
 
 The Bitmap data structure is a versatile and highly efficient tool, especially when working with large datasets where space efficiency and speed are paramount. Its use in set operations, indexing, and memory management makes it a valuable choice for many applications. Understanding how to leverage bitmaps can lead to significant performance improvements in various computing tasks.
 
@@ -224,17 +222,17 @@ While these data structures are similar, their specific use cases and implementa
 
 <br><br>
 
-# 5- Circular Buffer Data Structure
+# 6- Circular Buffer Data Structure
 
 A **circular buffer** (or ring buffer) is a fixed-size data structure that wraps around when it reaches its capacity, overwriting old data with new data. It efficiently handles streaming data or scenarios requiring a sliding window of elements.
 
-## Key Features
+### Key Features
 - **Fixed Size**: Holds a set number of elements (e.g., 5 slots).
 - **Wraparound**: When full, new data overwrites the oldest data.
 - **Pointers**: Uses `head` (write position) and `tail` (read position) to track data.
 - **Efficient**: Constant-time operations for adding/removing data.
 
-## How It Works
+### How It Works
 1. Initialize an array of fixed size with `head` and `tail` pointers.
 2. Add data at `head`, increment `head` (wrap to 0 if at end).
 3. Read/remove data from `tail`, increment `tail` (wrap to 0 if at end).
@@ -242,21 +240,21 @@ A **circular buffer** (or ring buffer) is a fixed-size data structure that wraps
 5. Buffer is **empty** when `head` equals `tail`.
 
 
-## Use Cases
+### Use Cases
 - Streaming data (e.g., audio/video buffers).
 - Task scheduling in real-time systems.
 - Logging recent events with limited memory.
 
-## Advantages
+### Advantages
 - Constant O(1) time for push/pop operations.
 - Reuses memory efficiently.
 
-## Limitations
+### Limitations
 - Fixed size limits capacity.
 - Old data is overwritten without warning.
 
 <br><br>
-# 6- Dope Vector
+# 7- Dope Vector
 ### What is a Dope Vector?
 
 A dope vector is a data structure used in computer programming to store metadata about a data object, typically an array, focusing on its memory layout. It acts as a descriptor that provides essential information to manage and access array elements efficiently, especially when the array's shape or size is not fixed at compile time. Dope vectors are widely used in high-level programming languages like Fortran and PL/I to facilitate dynamic array operations.
@@ -273,7 +271,7 @@ A dope vector typically contains the following metadata about an array:
 
 The exact contents of a dope vector vary depending on the programming language and operating system.
 
-## Uses of Dope Vectors
+### Uses of Dope Vectors
 
 Dope vectors serve several critical purposes in programming, particularly for managing arrays and other contiguous data structures:
 
@@ -299,14 +297,14 @@ Dope vectors serve several critical purposes in programming, particularly for ma
 
 
 
-## Advantages of Dope Vectors
+### Advantages of Dope Vectors
 
 - **Flexibility**: Enable dynamic array resizing and variable index ranges, unlike static arrays with fixed compile-time bounds.
 - **Efficiency**: Provide fast access to array metadata, reducing the need for costly scans or recalculations.
 - **Safety**: Reduce errors like buffer overflows by maintaining precise bounds information.
 - **Versatility**: Support complex operations like slicing, transposing, and window extraction without data copying.
 
-## Limitations
+### Limitations
 
 - **Overhead**: Fetching metadata from a dope vector introduces a small computational cost, typically one instruction to access the base address.[](https://en.wikipedia.org/wiki/Dope_vector)
 - **Complexity**: Managing dope vectors adds complexity to compiler design and runtime systems, especially for multidimensional arrays with variable strides.
@@ -314,7 +312,7 @@ Dope vectors serve several critical purposes in programming, particularly for ma
 
 
 
-## Conclusion
+### Conclusion
 
 Dope vectors are a powerful tool for managing arrays and other data structures in programming, offering flexibility, efficiency, and safety for dynamic memory operations. While they introduce minor overhead, their ability to handle complex array manipulations and prevent common errors like buffer overflows makes them invaluable in languages and systems requiring robust array management. Modern implementations, such as the C++ DopeVector library, continue to leverage this concept for high-performance computing tasks.
 
@@ -330,19 +328,19 @@ Dope vectors are a powerful tool for managing arrays and other data structures i
 <br>
 
 
-# 7- Dynamic Array
+# 8- Dynamic Array
 
 A **Dynamic Array** is a resizable array data structure that can grow or shrink during runtime. Unlike static arrays, its size isn't fixed at compile-time.
 it called in C++ a Vector.
 
-## Key Features
+### Key Features
 
 - Stores elements in contiguous memory
 - Automatically resizes when capacity is full
 - Allows random access using indices
 - Useful when the number of elements is unknown in advance
 
-## How It Works
+### How It Works
 
 1. Starts with an initial capacity.
 2. When full, allocates a new array with double the capacity.
@@ -351,7 +349,7 @@ it called in C++ a Vector.
 
 
 
-## Comparison
+### Comparison
 
 | Feature         | Static Array | Dynamic Array |
 |----------------|--------------|---------------|
@@ -359,7 +357,7 @@ it called in C++ a Vector.
 | Memory Growth  | No           | Yes           |
 | Manual Resize  | N/A          | Handled       |
 
-## When to Use
+### When to Use
 
 - When the number of elements is **not known at compile time**
 - When you want **efficient append operations**
@@ -367,13 +365,13 @@ it called in C++ a Vector.
 
 <br><br>
 
-# 8- Gap Buffer Data Structure
+# 9- Gap Buffer Data Structure
 
-## Overview
+### Overview
 
 The **Gap Buffer** is a data structure used for efficiently managing text in scenarios where frequent edits (insertions and deletions) occur near the cursor. It is especially useful in **text editors** and **word processors** where real-time text editing is needed. Instead of shifting large portions of text around when editing, the Gap Buffer uses a gap (an unused space) to insert or remove characters quickly at the cursor position.
 
-## Concept
+### Concept
 
 The main idea behind the Gap Buffer is to maintain a contiguous array where a portion of the array is reserved as a "gap." This gap is where the text can be inserted or deleted, while the rest of the text remains in place. The gap typically starts near the cursor and expands or shrinks as text is modified.
 
@@ -383,9 +381,9 @@ The main idea behind the Gap Buffer is to maintain a contiguous array where a po
 2. **Gap**: A section of the array that is empty and acts as the location where characters can be inserted or deleted.
 3. **Cursor**: The position at which the gap resides, indicating where edits occur.
 
----
 
-## How It Works
+
+### How It Works
 
 The Gap Buffer is initialized with a fixed size array, and the gap is placed at the beginning of the array. As text is typed or edited, the gap moves, and characters are inserted directly into the gap. Here's a breakdown of common operations:
 
@@ -401,9 +399,9 @@ The Gap Buffer is initialized with a fixed size array, and the gap is placed at 
 - The gap can be moved to different positions within the text by shifting the content in the buffer.
 - Moving the gap may require copying sections of the text before or after the gap.
 
----
 
-## Example
+
+### Example
 
 ### Initial State
 The buffer starts with an empty gap:
@@ -432,34 +430,34 @@ Suppose you delete the last character **"o"**. The gap grows, and the character 
 
 The gap size increases, but the rest of the text remains intact.
 
----
 
-## Time Complexity
+
+### Time Complexity
 
 - **Insertion**: O(1) — Inserting a character at the gap's position is constant time.
 - **Deletion**: O(1) — Deleting a character from the gap is constant time.
 - **Cursor Movement**: O(n) — Moving the gap across the entire text may require copying sections of the text before or after the gap.
 
----
 
-## Use Cases
+
+### Use Cases
 
 - **Text Editors**: Gap Buffers are commonly used in text editors where fast insertion and deletion of characters are essential. 
 - **Programming Environments**: In code editors or IDEs, Gap Buffers are useful for fast typing and modification of code.
 - **Command Line Interfaces**: Command-line text editors can benefit from Gap Buffers to manage text input efficiently.
 
-## Conclusion
+### Conclusion
 
 The Gap Buffer is a simple yet effective data structure used for efficient text editing, especially for applications that involve frequent, localized changes to the text. It works best when text edits are focused near the cursor and provides a significant improvement in performance compared to traditional array-based approaches.
 
 <br><br>
-# 9- Hashed Array Tree (HAT)
+# 10- Hashed Array Tree (HAT)
 
-## Overview
+### Overview
 
 A Hashed Array Tree (HAT) is a dynamic array data structure designed to provide efficient access and insertion operations. It uses a two-level hierarchy consisting of a top-level array of pointers to fixed-size leaf arrays. This structure allows for O(1) access time and amortized O(1) insertion time, making it suitable for scenarios requiring frequent insertions and accesses.
 
-## Benefits
+### Benefits
 
 - **Efficient Access and Insertion**: HAT provides O(1) access time and amortized O(1) insertion time, making it highly efficient for dynamic array operations.
 - **Memory Efficiency**: By using a two-level structure, HAT reduces the overhead associated with frequent reallocations and improves cache performance.
@@ -467,30 +465,30 @@ A Hashed Array Tree (HAT) is a dynamic array data structure designed to provide 
 - **Flexible Leaf Size**: The leaf size can be adjusted to balance memory usage and performance, allowing for optimization based on specific use cases.
 - **Modular Design**: The two-level structure makes the implementation straightforward and modular, simplifying the logic for resizing and accessing elements.
 
-## Use Cases
+### Use Cases
 
 - **Large Datasets**: HAT is ideal for applications that need to handle large, dynamically growing datasets with efficient access and insertion operations.
 - **In-Memory Data Stores**: Suitable for in-memory data stores where frequent insertions and accesses are required.
 - **Real-Time Analytics**: Useful in real-time analytics applications where quick access to data is crucial.
 - **Dynamic Data Structures**: Can be used as an underlying data structure for implementing other dynamic data structures, such as dynamic hash tables or dynamic arrays with additional features.
 
-## How It Works
+### How It Works
 
 1. **Top-Level Array**: The top-level array contains pointers to leaf arrays. This array is resized as needed to accommodate more leaf arrays.
 2. **Leaf Arrays**: Each leaf array is a fixed-size array that stores the actual data elements. Leaf arrays are resized dynamically to maintain efficient memory usage.
 3. **Insertion**: When a new element is inserted, it is placed in the appropriate leaf array. If the leaf array is full, a new leaf array is created, and the top-level array is expanded if necessary.
 4. **Access**: Elements can be accessed directly using their index, providing O(1) access time.
 
-## Conclusion
+### Conclusion
 
 The Hashed Array Tree (HAT) is a versatile data structure that combines the efficiency of arrays with the dynamic resizing capabilities of more complex data structures. It is particularly useful in scenarios where you need to handle large, dynamically growing datasets with efficient access and insertion operations. HAT's modular design and flexible leaf size make it adaptable to various use cases, ensuring optimal performance and memory usage.
 
 <br><br>
-# 10- Lookup Table Data Structure
+# 11- Lookup Table Data Structure
 
 A lookup table is a data structure designed for efficient data retrieval. It is often implemented as an array or an associative array (such as a hash table or dictionary). Lookup tables are used to replace runtime computation with simpler array indexing operations, thereby improving performance.
 
-## Key Characteristics
+### Key Characteristics
 
 1. **Efficient Access**:
    - Lookup tables provide fast access to data through direct indexing or key-based access.
@@ -504,7 +502,7 @@ A lookup table is a data structure designed for efficient data retrieval. It is 
    - Lookup tables involve a tradeoff between space and time.
    - They use more memory to store precomputed values but significantly reduce the time required for computations.
 
-## Applications
+### Applications
 
 1. **Caching**:
    - Storing frequently accessed data to improve performance.
@@ -522,7 +520,7 @@ A lookup table is a data structure designed for efficient data retrieval. It is 
    - Quickly checking the validity of input data against a predefined set of values.
    - Example: Validating user input against a list of acceptable values.
 
-## Examples
+### Examples
 
 1. **Trigonometric Values**:
    - A table of sine values for angles from 0 to 360 degrees.
@@ -536,23 +534,23 @@ A lookup table is a data structure designed for efficient data retrieval. It is 
    - A table of error messages corresponding to error codes.
    - This can be used to quickly retrieve human-readable error messages based on error codes.
 
-## Conclusion
+### Conclusion
 
 Lookup tables are a powerful tool for optimizing performance-critical applications. By storing precomputed values and providing efficient access, they can significantly reduce the time required for repetitive calculations. However, they come with a tradeoff of increased memory usage. Therefore, they are most effective in scenarios where the same computation is performed repeatedly with a limited set of inputs.
 <br><br>
-# 11- Matrix Data Structure
+# 12- Matrix Data Structure
 
 A matrix is a fundamental data structure in mathematics and computer science, used to represent a two-dimensional array of elements. These elements can be numbers, symbols, or even expressions, and they are arranged in rows and columns. This document provides an overview of the matrix data structure, its properties, operations, and applications.
 
-## Structure
+### Structure
 
 A matrix is typically denoted by a capital letter (e.g., \( A \)) and its elements are represented by the corresponding lowercase letter with subscripts indicating their position (e.g., \( a_{ij} \) for the element in the \(i\)-th row and \(j\)-th column).
 
-## Dimensions
+### Dimensions
 
 The size of a matrix is described by the number of rows and columns it contains. For example, a matrix with \( m \) rows and \( n \) columns is called an \( m \times n \) matrix.
 
-## Operations
+### Operations
 
 Various operations can be performed on matrices, including addition, subtraction, multiplication, and more. These operations follow specific rules:
 
@@ -560,7 +558,7 @@ Various operations can be performed on matrices, including addition, subtraction
 - **Scalar Multiplication**: A matrix can be multiplied by a scalar, which involves multiplying each element of the matrix by that scalar.
 - **Matrix Multiplication**: Two matrices can be multiplied if the number of columns in the first matrix equals the number of rows in the second matrix. The result is a matrix where each element is the dot product of the corresponding row of the first matrix and column of the second matrix.
 
-## Properties
+### Properties
 
 Matrices can have special properties, such as:
 
@@ -569,7 +567,7 @@ Matrices can have special properties, such as:
 - **Diagonal Matrix**: A matrix with non-zero elements only on the diagonal.
 - **Identity Matrix**: A matrix with ones on the diagonal and zeros elsewhere.
 
-## Applications
+### Applications
 
 Matrices are used in a wide range of applications, including:
 
@@ -581,7 +579,7 @@ Matrices are used in a wide range of applications, including:
 <br><br>
 
 
-# 12- Sparse Matrix
+# 13- Sparse Matrix
 
 A sparse matrix is a matrix in which most of the elements are zero. This is in contrast to a dense matrix, where most elements are non-zero. Sparse matrices are common in scientific computing, machine learning, and graph theory, where large datasets often contain many zero values.
 
