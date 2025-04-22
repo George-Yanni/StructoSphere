@@ -1,4 +1,4 @@
-# Array vs Associative Array
+# 1- Array vs Associative Array
 
 The following outlines the key differences between **arrays** and **associative arrays** in programming.
 
@@ -22,7 +22,7 @@ The following outlines the key differences between **arrays** and **associative 
 - Choose based on whether you need **sequential access** (array) or **key-based lookup** (associative array).
 
 
-# Bit Array (Bitset or Bit Vector)
+# 2- Bit Array (Bitset or Bit Vector)
 
 A **bit array** (also known as a **bitset** or **bit vector**) is a data structure that efficiently stores a sequence of bits (0s and 1s). Each bit in a bit array can represent a simple true/false value, or it can be used to represent some other binary state or condition. A bit array is useful when you need to store a large number of binary values (such as flags, on/off states, or binary data) in a compact way, using minimal memory.
 
@@ -73,7 +73,7 @@ A **bit field** is a data structure used in programming to store multiple boolea
 
 <br><br>
 
-# Introduction to Bitboards
+# 3- Introduction to Bitboards
 
 ## What is a Bitboard?
 
@@ -115,7 +115,7 @@ Bitboards are versatile and can be used for a variety of tasks in game programmi
 - **Move Validation**: Verifying the legality of a move by checking bitboard intersections.
 
 <br><br>
-# Introduction to Bitmap Data Structure
+# 4- Introduction to Bitmap Data Structure
 
 A **Bitmap** is a simple and efficient data structure that represents a collection of bits or binary values, typically used for compact storage and fast access to a large number of boolean flags or binary states. It is often used when dealing with large datasets where space and time efficiency are critical.
 
@@ -224,7 +224,7 @@ While these data structures are similar, their specific use cases and implementa
 
 <br><br>
 
-# Circular Buffer Data Structure
+# 5- Circular Buffer Data Structure
 
 A **circular buffer** (or ring buffer) is a fixed-size data structure that wraps around when it reaches its capacity, overwriting old data with new data. It efficiently handles streaming data or scenarios requiring a sliding window of elements.
 
@@ -256,7 +256,7 @@ A **circular buffer** (or ring buffer) is a fixed-size data structure that wraps
 - Old data is overwritten without warning.
 
 <br><br>
-# Dope Vector
+# 6- Dope Vector
 ### What is a Dope Vector?
 
 A dope vector is a data structure used in computer programming to store metadata about a data object, typically an array, focusing on its memory layout. It acts as a descriptor that provides essential information to manage and access array elements efficiently, especially when the array's shape or size is not fixed at compile time. Dope vectors are widely used in high-level programming languages like Fortran and PL/I to facilitate dynamic array operations.
@@ -330,7 +330,7 @@ Dope vectors are a powerful tool for managing arrays and other data structures i
 <br>
 
 
-# Dynamic Array
+# 7- Dynamic Array
 
 A **Dynamic Array** is a resizable array data structure that can grow or shrink during runtime. Unlike static arrays, its size isn't fixed at compile-time.
 it called in C++ a Vector.
@@ -367,7 +367,7 @@ it called in C++ a Vector.
 
 <br><br>
 
-# Gap Buffer Data Structure
+# 8- Gap Buffer Data Structure
 
 ## Overview
 
@@ -453,7 +453,7 @@ The gap size increases, but the rest of the text remains intact.
 The Gap Buffer is a simple yet effective data structure used for efficient text editing, especially for applications that involve frequent, localized changes to the text. It works best when text edits are focused near the cursor and provides a significant improvement in performance compared to traditional array-based approaches.
 
 <br><br>
-# Hashed Array Tree (HAT)
+# 9- Hashed Array Tree (HAT)
 
 ## Overview
 
@@ -486,7 +486,7 @@ A Hashed Array Tree (HAT) is a dynamic array data structure designed to provide 
 The Hashed Array Tree (HAT) is a versatile data structure that combines the efficiency of arrays with the dynamic resizing capabilities of more complex data structures. It is particularly useful in scenarios where you need to handle large, dynamically growing datasets with efficient access and insertion operations. HAT's modular design and flexible leaf size make it adaptable to various use cases, ensuring optimal performance and memory usage.
 
 <br><br>
-# Lookup Table Data Structure
+# 10- Lookup Table Data Structure
 
 A lookup table is a data structure designed for efficient data retrieval. It is often implemented as an array or an associative array (such as a hash table or dictionary). Lookup tables are used to replace runtime computation with simpler array indexing operations, thereby improving performance.
 
@@ -539,3 +539,104 @@ A lookup table is a data structure designed for efficient data retrieval. It is 
 ## Conclusion
 
 Lookup tables are a powerful tool for optimizing performance-critical applications. By storing precomputed values and providing efficient access, they can significantly reduce the time required for repetitive calculations. However, they come with a tradeoff of increased memory usage. Therefore, they are most effective in scenarios where the same computation is performed repeatedly with a limited set of inputs.
+<br><br>
+# 11- Matrix Data Structure
+
+A matrix is a fundamental data structure in mathematics and computer science, used to represent a two-dimensional array of elements. These elements can be numbers, symbols, or even expressions, and they are arranged in rows and columns. This document provides an overview of the matrix data structure, its properties, operations, and applications.
+
+## Structure
+
+A matrix is typically denoted by a capital letter (e.g., \( A \)) and its elements are represented by the corresponding lowercase letter with subscripts indicating their position (e.g., \( a_{ij} \) for the element in the \(i\)-th row and \(j\)-th column).
+
+## Dimensions
+
+The size of a matrix is described by the number of rows and columns it contains. For example, a matrix with \( m \) rows and \( n \) columns is called an \( m \times n \) matrix.
+
+## Operations
+
+Various operations can be performed on matrices, including addition, subtraction, multiplication, and more. These operations follow specific rules:
+
+- **Addition and Subtraction**: Two matrices can be added or subtracted element-wise if they have the same dimensions.
+- **Scalar Multiplication**: A matrix can be multiplied by a scalar, which involves multiplying each element of the matrix by that scalar.
+- **Matrix Multiplication**: Two matrices can be multiplied if the number of columns in the first matrix equals the number of rows in the second matrix. The result is a matrix where each element is the dot product of the corresponding row of the first matrix and column of the second matrix.
+
+## Properties
+
+Matrices can have special properties, such as:
+
+- **Square Matrix**: A matrix with an equal number of rows and columns.
+- **Symmetric Matrix**: A matrix that is equal to its transpose.
+- **Diagonal Matrix**: A matrix with non-zero elements only on the diagonal.
+- **Identity Matrix**: A matrix with ones on the diagonal and zeros elsewhere.
+
+## Applications
+
+Matrices are used in a wide range of applications, including:
+
+- **Linear Algebra**: Solving systems of linear equations.
+- **Computer Graphics**: Transforming data in 2D and 3D space.
+- **Machine Learning**: Representing data and performing operations in algorithms.
+- **Physics and Engineering**: Modeling physical systems and relationships.
+
+<br><br>
+
+
+# 12- Sparse Matrix
+
+A sparse matrix is a matrix in which most of the elements are zero. This is in contrast to a dense matrix, where most elements are non-zero. Sparse matrices are common in scientific computing, machine learning, and graph theory, where large datasets often contain many zero values.
+
+### Why Use Sparse Matrices?
+
+Sparse matrices are useful because they allow for efficient storage and computation. Storing only non-zero elements saves memory, and specialized algorithms can perform operations like matrix multiplication faster than with dense matrices.
+
+### Common Representations
+
+Sparse matrices are stored in formats that avoid storing zero elements. Some popular formats include:
+
+1. **Coordinate List (COO)**:
+   - Stores a list of `(row, column, value)` tuples for non-zero elements.
+   - Simple and flexible but not optimized for arithmetic operations.
+
+2. **Compressed Sparse Row (CSR)**:
+   - Uses three arrays: one for non-zero values, one for column indices, and one for row pointers.
+   - Efficient for matrix operations like multiplication and row slicing.
+
+3. **Compressed Sparse Column (CSC)**:
+   - Similar to CSR but compresses columns instead of rows.
+   - Useful for column-based operations.
+
+4. **Dictionary of Keys (DOK)**:
+   - Uses a dictionary to map `(row, column)` pairs to non-zero values.
+   - Good for incremental construction but less efficient for operations.
+
+### Applications
+
+Sparse matrices are widely used in:
+
+- **Graph Algorithms**: Adjacency matrices of sparse graphs (e.g., social networks) are sparse.
+- **Machine Learning**: Feature matrices in NLP or recommendation systems often have many zeros.
+- **Scientific Computing**: Solving partial differential equations where matrices represent sparse systems.
+- **Finite Element Analysis**: Modeling physical systems with sparse connectivity.
+
+### Comparison of Sparse Matrix Formats: COO, CSR, CSC, DOK
+
+Below is a comparison of the Coordinate List (COO), Compressed Sparse Row (CSR), Compressed Sparse Column (CSC), and Dictionary of Keys (DOK) sparse matrix formats in a table.
+
+| **Feature**               | **COO**                                                                 | **CSR**                                                                 | **CSC**                                                                 | **DOK**                                                                 |
+|---------------------------|-------------------------------------------------------------------------|-------------------------------------------------------------------------|-------------------------------------------------------------------------|-------------------------------------------------------------------------|
+| **Structure**             | List of `(row, column, value)` tuples for non-zero elements.            | Three arrays: `values`, `col_indices`, `row_ptr` (row pointers).         | Three arrays: `values`, `row_indices`, `col_ptr` (column pointers).      | Dictionary mapping `(row, column)` to non-zero values.                  |
+| **Memory Efficiency**     | Moderate (stores row, column, value for each non-zero element).         | High (compresses row info, fewer pointers).                             | High (compresses column info, fewer pointers).                          | Moderate (dictionary overhead, but only stores non-zero elements).      |
+| **Construction**          | Fast for incremental construction; easy to add elements.                | Slower (requires conversion from COO or similar for compression).        | Slower (requires conversion from COO or similar for compression).        | Very fast for incremental construction; direct element insertion.       |
+| **Modification**          | Easy to add/remove elements; no restructuring needed.                   | Difficult; adding/removing elements requires rebuilding arrays.          | Difficult; adding/removing elements requires rebuilding arrays.          | Very easy; direct insertion/deletion in dictionary.                     |
+| **Row Access**            | Slow; requires scanning all tuples.                                    | Fast; row pointers enable efficient row slicing.                        | Slow; column-based structure makes row access inefficient.              | Moderate; depends on dictionary lookup efficiency.                      |
+| **Column Access**         | Slow; requires scanning all tuples.                                    | Slow; row-based structure makes column access inefficient.              | Fast; column pointers enable efficient column slicing.                  | Moderate; depends on dictionary lookup efficiency.                      |
+| **Arithmetic Operations** | Inefficient; unordered data slows matrix multiplication, etc.           | Fast; optimized for row-based operations like matrix multiplication.     | Fast; optimized for column-based operations like matrix multiplication.  | Slow; dictionary lookups are not optimized for arithmetic.              |
+| **Use Cases**             | - Matrix construction<br>- Temporary storage<br>- Frequent updates       | - Scientific computing<br>- Machine learning<br>- Row-based operations   | - Graph algorithms<br>- Column-based operations<br>- Linear algebra      | - Incremental matrix building<br>- Frequent modifications<br>- Element-wise access |
+| **Example (Matrix)**      | `[(0, 1, 1), (1, 0, 2)]` for `[[0, 1], [2, 0]]`                        | `values=[1, 2], col_indices=[1, 0], row_ptr=[0, 1, 2]`                 | `values=[2, 1], row_indices=[1, 0], col_ptr=[0, 1, 2]`                 | `{(0, 1): 1, (1, 0): 2}` for `[[0, 1], [2, 0]]`                        |
+
+## Notes
+- **COO** is best for initial matrix assembly or when flexibility is needed but is not ideal for computation.
+- **CSR** excels in row-oriented tasks, common in scientific computing and machine learning.
+- **CSC** is preferred for column-oriented tasks, such as certain graph algorithms.
+- **DOK** is ideal for dynamic matrix construction but less efficient for large-scale operations.
+
