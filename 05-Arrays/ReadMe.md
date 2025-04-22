@@ -486,3 +486,56 @@ A Hashed Array Tree (HAT) is a dynamic array data structure designed to provide 
 The Hashed Array Tree (HAT) is a versatile data structure that combines the efficiency of arrays with the dynamic resizing capabilities of more complex data structures. It is particularly useful in scenarios where you need to handle large, dynamically growing datasets with efficient access and insertion operations. HAT's modular design and flexible leaf size make it adaptable to various use cases, ensuring optimal performance and memory usage.
 
 <br><br>
+# Lookup Table Data Structure
+
+A lookup table is a data structure designed for efficient data retrieval. It is often implemented as an array or an associative array (such as a hash table or dictionary). Lookup tables are used to replace runtime computation with simpler array indexing operations, thereby improving performance.
+
+## Key Characteristics
+
+1. **Efficient Access**:
+   - Lookup tables provide fast access to data through direct indexing or key-based access.
+   - The time complexity for accessing data is typically O(1), making retrieval operations very efficient.
+
+2. **Precomputed Values**:
+   - They store precomputed results of expensive operations or frequently accessed data.
+   - This approach saves time by avoiding repetitive calculations during runtime.
+
+3. **Space-Time Tradeoff**:
+   - Lookup tables involve a tradeoff between space and time.
+   - They use more memory to store precomputed values but significantly reduce the time required for computations.
+
+## Applications
+
+1. **Caching**:
+   - Storing frequently accessed data to improve performance.
+   - Example: Caching results of database queries.
+
+2. **Configuration Data**:
+   - Storing configuration settings or mappings that are frequently referenced.
+   - Example: Storing user preferences or system settings.
+
+3. **Algorithm Optimization**:
+   - Replacing complex calculations with simple table lookups.
+   - Example: Using a lookup table for trigonometric functions or cryptographic algorithms.
+
+4. **Data Validation**:
+   - Quickly checking the validity of input data against a predefined set of values.
+   - Example: Validating user input against a list of acceptable values.
+
+## Examples
+
+1. **Trigonometric Values**:
+   - A table of sine values for angles from 0 to 360 degrees.
+   - This can be used to quickly retrieve the sine of an angle without performing the calculation each time.
+
+2. **ASCII Values**:
+   - A table of ASCII values for character encoding.
+   - This can be used to quickly convert between characters and their ASCII representations.
+
+3. **Error Messages**:
+   - A table of error messages corresponding to error codes.
+   - This can be used to quickly retrieve human-readable error messages based on error codes.
+
+## Conclusion
+
+Lookup tables are a powerful tool for optimizing performance-critical applications. By storing precomputed values and providing efficient access, they can significantly reduce the time required for repetitive calculations. However, they come with a tradeoff of increased memory usage. Therefore, they are most effective in scenarios where the same computation is performed repeatedly with a limited set of inputs.
