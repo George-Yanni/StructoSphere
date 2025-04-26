@@ -1,0 +1,19 @@
+2025-04-26T08:00:51 - INFO - IDS Initialized. Logging to ids_log.txt
+2025-04-26T08:00:51 - INFO - Inserted new IP: 192.168.1.10 with score: 1 at 2025-04-26T08:00:51
+2025-04-26T08:00:51 - INFO - Inserted new IP: 10.0.0.5 with score: 5 at 2025-04-26T08:00:51
+2025-04-26T08:00:51 - INFO - Inserted new IP: 192.168.1.20 with score: 3 at 2025-04-26T08:00:51
+2025-04-26T08:00:51 - INFO - Updated IP: 192.168.1.10, score incremented by 2, new score: 3, timestamp: 2025-04-26T08:00:51
+2025-04-26T08:00:51 - INFO - Inserted new IP: 172.16.0.100 with score: 10 at 2025-04-26T08:00:51
+2025-04-26T08:00:51 - INFO - Inserted new IP: 192.168.1.30 with score: 5 at 2025-04-26T08:00:51
+2025-04-26T08:00:51 - INFO - Updated IP: 10.0.0.5, score incremented by 7, new score: 12, timestamp: 2025-04-26T08:00:51
+2025-04-26T08:00:51 - INFO - Inserted new IP: 192.168.1.40 with score: 1 at 2025-04-26T08:00:51
+2025-04-26T08:00:51 - INFO - Updated IP: 192.168.1.10, score incremented by 4, new score: 7, timestamp: 2025-04-26T08:00:51
+2025-04-26T08:00:51 - INFO - Found IP: 192.168.1.10, score: 7, timestamps count: 3
+2025-04-26T08:00:51 - INFO - Found IP: 10.0.0.5, score: 12, timestamps count: 2
+2025-04-26T08:00:51 - INFO - IP not found: 1.2.3.4
+2025-04-26T08:00:51 - INFO - Range query [192.168.1.10 to 192.168.1.35]: 3 IPs found.
+2025-04-26T08:00:51 - INFO - Top 3 (requested 3) suspicious IPs: [(10.0.0.5, 12), (172.16.0.100, 10), (192.168.1.10, 7)]
+2025-04-26T08:00:51 - INFO - Deleted IP: 10.0.0.5
+2025-04-26T08:00:51 - INFO - IP not found: 10.0.0.5
+2025-04-26T08:00:51 - WARNING - Attempted to delete non-existent IP: 1.1.1.1
+2025-04-26T08:00:51 - INFO - IDS Shutting down.

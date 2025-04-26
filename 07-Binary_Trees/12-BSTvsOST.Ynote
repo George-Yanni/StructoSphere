@@ -1,0 +1,36 @@
+/*
+    Comparison between Sorted Binary Search Tree (BST) and Order Statistic Tree (OST):
+    
+    In a **sorted BST**:
+    - The tree nodes are arranged in sorted order: left subtree < node < right subtree.
+    - To find the k-th smallest element or rank of an element, you would need to perform an **in-order traversal**.
+    - **In-order traversal** visits nodes in ascending order, so to find the k-th smallest, you would need to traverse the tree up to the k-th node.
+    - **Efficiency**: Finding the k-th smallest element in a plain sorted BST takes **O(k)** time, because you need to traverse from the root and count each node until you reach the k-th element.
+    - **No additional information**: The standard BST does not maintain the size of subtrees at each node, so it doesn't provide an efficient way to directly access the k-th smallest element.
+
+    Example:
+    - To find the 5th smallest element, you would have to traverse the tree from the root, visiting nodes and counting them one by one until you reach the 5th node. This results in an O(k) time complexity, which is inefficient for large trees.
+
+    In an **Order Statistic Tree (OST)**:
+    - The OST is essentially an **augmented BST** where each node has an additional field: `size`, representing the size of the subtree rooted at that node (including the node itself).
+    - With the `size` field, the tree can **efficiently track the rank of any element** and directly access the k-th smallest element in **O(log n)** time.
+    - **Finding the k-th smallest**: Starting at the root, you can use the `size` field to navigate to the k-th smallest element. For example, if the left subtree has 3 nodes, you can determine whether the k-th smallest element is in the left or right subtree without visiting all nodes.
+    - This allows you to **jump directly** to the k-th smallest element rather than performing an in-order traversal.
+    
+    Example:
+    - To find the 5th smallest element, you can check the size of the left subtree. If it has 3 nodes, you know the 5th smallest is either the 2nd smallest in the right subtree or you need to adjust your rank. This allows you to find the element in O(log n) time.
+
+    Key Comparison:
+    | Feature                        | Sorted BST                     |  Order Statistic Tree (OST)       |
+    |--------------------------------|------------------------------- |-----------------------------------|
+    | In-order Traversal             |Used to find k-th smallest      |No traversal needed, uses size info|
+    | Finding k-th smallest element  |O(k) time                       |O(log n) time                      |
+    | Finding rank of element        |Inefficient without extra info  |Efficient O(log n) using size field|
+    | Subtree size information       |Not maintained                  |Maintained at each node            |
+
+    In conclusion:
+    - A **sorted BST** provides the tree structure for sorted elements but does not provide **efficient rank/select operations**.
+    - An **OST** augments the BST with additional size information, enabling **efficient rank and select operations** in O(log n) time.
+
+    This makes the **Order Statistic Tree** ideal for tasks where you need fast access to the k-th smallest element or need to find the rank of an element within a set of ordered data.
+*/
