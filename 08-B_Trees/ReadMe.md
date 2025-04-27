@@ -23,9 +23,7 @@
 - B*-tree
 - 2–3 tree
 - 2–3–4 tree
-- <span style="color:red">Fusion tree (COMPLEX, NOT IMPLEMENTED)</span>
-
-
+- Fusion tree  <span style="color:rgb(255, 0, 0)">(COMPLEX, NOT IMPLEMENTED)</span>
 
 > **Note:** I currently do not intend to implement this, as it has already been implemented in [fusiontree](https://github.com/6851-2017/fusiontree).
 
