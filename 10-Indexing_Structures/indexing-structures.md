@@ -138,5 +138,3 @@ A Merkle Tree is a binary tree where leaf nodes store cryptographic hashes of da
 - **Disk-Optimized**: Suitable for systems with frequent disk I/O.
 - **Compressed**: Reduces memory usage via structural or algorithmic compression.
 - **Cryptographic**: Supports secure data verification.
-
-This overview and comparison should help in selecting the appropriate structure for specific applications, balancing trade-offs in performance, space, and functionality.
