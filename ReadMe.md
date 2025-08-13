@@ -13,7 +13,7 @@ Connecting theoretical concepts to practical, everyday scenarios.
 ## My Commitment
 I have put in **honest, dedicated work** to create an engaging and insightful resource.
 
-## 📚 Comprehensive Data Structures Collection
+## Comprehensive Data Structures Collection
 
 Below is the complete list of data structures implemented in this repository:  
 
